@@ -96,6 +96,8 @@ int AddTask(LPWSTR filePath)
 
         // 设置创建者
         hr = regInfo->put_Author(_bstr_t(L"Administrator"));
+        // 设置描述
+        hr = regInfo->put_Description(_bstr_t(L"使你的 Windows 保持最新状态。如果此任务已禁用或停止，则 Windows 将无法保持最新状态，这意味着无法修复可能产生的安全漏洞，并且功能也可能无法使用。"));
 
         CComPtr<ITaskSettings> taskSettings;
         hr = taskDefinition->get_Settings(&taskSettings);
